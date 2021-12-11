@@ -1,0 +1,122 @@
+<!DOCTYPE html >
+<html  lang = " es " >
+<head>
+   <meta  charset = " utf-8 " >
+   <título > Factura </título >
+   <link  rel = " stylesheet " href = " styles.css " >
+   <link  rel = " stylesheet " href = " https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css " >
+  <guion>
+  
+  var  idCliente ;
+  var  nombreCliente  ;
+  var  direccionCliente ; 
+  var  telefonoCliente ;
+  var  nombreProducto ;
+  var  precio ;
+  var  cantidad ;
+  var  total ;
+  var  subtotal ;
+  var  p = 0 ;
+  var  iva ;
+  var  subtotalP = 0 ;
+  var  fecha =  nueva  fecha ( ) ;
+  var  imprimir ;
+  var  numero_Factura = 0 ;
+
+
+function  generarFactura ( ) {
+
+  
+  idCliente = documento . getElementById ( "idCliente" ) . valor ;
+  nombreCliente = documento . getElementById ( "nombreCliente" ) . valor ;
+  direccionCliente = documento . getElementById ( "direccionCliente" ) . valor ;
+  telefonoCliente = documento . getElementById ( "telefonoCliente" ) . valor ;
+
+ 
+  
+  documento . write ( fecha . getDate ( )  +  "/"  +  ( fecha . getMonth ( ) + 1 )  +  "/"  +  fecha . getFullYear ( ) + "</br>" + "</br>" + "</ br > " ) ;
+  documento . write ( "Identificación del Cliente:" + '& nbsp;' + idCliente + "<br>" + "<br>" ) ;
+  documento . write ( "Nombre del Cliente:" + '& nbsp;' + nombreCliente + "<br>" + "<br>" ) ;
+  documento . write ( "Dirección:" + '& nbsp;' + direccionCliente + "<br>" + "<br>" ) ;
+  documento . write ( "Telefono:" + '& nbsp;' + telefonoCliente + "<br>" + "<br>" + "<br>" ) ;
+  
+  
+for  ( subtotal = 0 ;  nombreProducto  ! =  "*" ;  subtotal ++ )  {
+
+
+nombreProducto = prompt ( 'Ingrese Nombre del Producto' ) ;
+documento . write ( "Nombre Producto:" + '& nbsp;' + nombreProducto + '& nbsp;' + '& nbsp;' ) ;
+
+precio = parseFloat ( prompt ( 'Ingrese Precio' ) ) ;
+documento . write ( "Precio:" + '& nbsp;' + precio + '& nbsp;' + '& nbsp;' ) ;
+
+cantidad = parseInt ( prompt ( 'Ingrese Cantidad' ) ) ;
+documento . write ( "Cantidad:" + '& nbsp;' + cantidad + '& nbsp;' + '& nbsp;' ) ;
+
+
+nombreProducto = prompt ( 'Ingrese "*" Para terminar o cualquier tecla para continuar' ) ;
+
+  subtotal = precio * cantidad ;
+  subtotalP = subtotalP + parseInt ( subtotal ) ;
+  ITBMS = subtotalP * 0,17 ;
+  total = subtotalP + ITBMS ;
+  
+
+  documento . write ( "SubTotal:" + '& nbsp;' + subtotal + "<br>" + "<br>" + "<br>" ) ;
+  
+
+} 
+documento . write ( "Subtotal:" + '& nbsp;' + subtotalP + "<br>" + "<br>" ) ;
+documento . write ( "ITBMS 7%:" + '& nbsp;' + ITBMS + "<br>" + "<br>" ) ;
+documento . write ( "Total:" + '& nbsp;' + total + "<br>" + "<br>" ) ;
+documento . write ( '<button onclick = "window.print ()"> Imprimir Factura </button>' ) ;
+
+}
+
+generarFactura ( )
+
+
+</script >
+</head >
+<body bgcolor="#A4EDE7">
+      <div  class = " page-nav " >
+      <h1  class = " main-header__title " > BISOVY STORE </h1 >
+      <div align="left">
+        <button  id = " checkout " class = " button-checkout " onclick = " pay () " > <i  class = " fa fa-shopping-cart " aria-hidden = " true " > </i > Pagar </button >
+      </div>
+   </div >
+   </div >
+   <div align="center">
+     <div  class = " menú " >
+     <ul >
+         <Li > <a  clase = " Inicio " href =" index.html " > Inicio </a ></Li>
+         <Li > <a  href = " Descripción " > Descripción </a ></Li>
+         <Li > <a  href = " formulario.html " > Formulario </a ></Li>
+         <Li > <a  href = "" > Factura </a ></Li>
+      </ul >
+     </div >
+     <h1 > Factura </h1 >
+   
+   <div >
+   <h3 > Número de identificación </h3 > 
+   <input type  tipo = " texto " nombre =" idCliente " ID =" idCliente " marcador de posición =" idCliente "/> <br >
+   <h3 > Nombre Cliente </h3 > 
+   <input type = " texto " nombre =" nombreCliente " ID =" nombreCliente " marcador de posición =" Nombre "/> <br >
+   <h3 > Dirección </h3 > 
+   <input  type = " texto " nombre =" direccionCliente " ID =" direccionCliente " marcador de posición =" Dirección "/> <br >
+   <h3 > Telefono </h3 >   
+   <input  type = " text " name = " telefonoCliente " Id ="marcador de posición"  telefono Cliente  =" Telefono "/> <br > <br >
+   <button  name = " generarFactura " > Generar Factura </button >
+      </div >
+    </div>
+    <br>
+    <br>
+      <footer  class = "footer">
+          <div  class = " contenedor de texto-centro " ><a class =" cc-facebook BTN BTN-link " href =" # " > <i  clase =" fa fa-facebook " aria-oculta =" verdad " > </i > </a > <a clase = " cc-instagram BTN BTN-link " href =" # " > <i  clase = "fa fa-instagram " aria-hidden =" true " > </i > </a> 
+          </div >
+      <div  class = " h4 title text-center " > Yerenys Quintero </div >
+      <div  class = " text-center text-muted " ></div>
+        <p > &copy; Hecho por Yerenys Quintero, 8-992-1243 <br></p>
+    </footer>
+</body >
+</html >
